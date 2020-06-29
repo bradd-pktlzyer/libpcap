@@ -152,6 +152,7 @@ struct rtentry;		/* declarations in <net/if.h> */
  * Winsock on Windows.  (It will also be initialized as needed if
  * pcap_init() hasn't been called.)
  */
+#ifndef _STATIC
 BOOL WINAPI DllMain(
   HANDLE hinstDLL _U_,
   DWORD dwReason _U_,
@@ -160,6 +161,7 @@ BOOL WINAPI DllMain(
 {
 	return (TRUE);
 }
+#endif
 
 /*
  * Start Winsock.
